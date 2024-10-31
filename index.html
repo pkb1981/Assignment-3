@@ -37,8 +37,6 @@
             bgBanner: 'linear-gradient(0.00deg, rgb(255, 255, 255),rgba(255, 255, 255, 0) 100%)',
 
           },
-
-
         }
       }
     }
@@ -70,7 +68,7 @@
         </div>
         <div class="navbar-end">
           <!--cart,user logo added with fontawsome -->
-          <div class="flex items-center gap-5 text-lg">
+          <div class="flex items-center gap-5 text-lg  hidden lg:flex">
             <button class="flex items-center gap-4 text-secondary">
               <i class="fa-solid fa-magnifying-glass p-2 border rounded-full"></i>
               <i class="fa-solid fa-cart-shopping p-2 border rounded-full"></i>
@@ -78,17 +76,18 @@
             <button
               class="bg-bgPrimary border flex justify-center items-center gap-2 rounded-full w-52 h-14 font-extrabold">Book
               Consult<i class="fa-solid fa-arrow-up text-arrow bg-black border rounded-full  p-1  text-xl w-8 h-8"
-                style="transform: rotate(45deg);"></i></button>
+                style="transform: rotate(45deg);"></i>
+            </button>
           </div>
 
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-
               <i class="fa-solid fa-bars"></i>
             </div>
+
             <ul tabindex="0"
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg font-medium right-0 gap-5">
-              <!-- copy the menu item for mobile view sandwitch -->
+
               <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Home</a></li>
               <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Services</a></li>
               <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Portfolio</a></li>
