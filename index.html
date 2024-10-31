@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8">
@@ -22,20 +22,86 @@
       theme: {
         extend: {
           colors: {
-            clifford: '#da373d',
-
+            primary: 'rgb(33, 33, 33)',
+            secondary: 'rgb(115, 115, 115)',
+            para: 'rgb(73, 73, 73)',
+            work: 'rgb(28, 28, 28)',
+            lower: 'rgb(233, 233, 233)',
+            bgPrimary: 'rgb(171, 239, 95)',
+            arrow: 'rgb(255, 255, 255)',
           },
-          fontfamily: {
+          fontFamily: {
             Manrope: "Manrope",
           },
+          background: {
+            bgBanner: 'linear-gradient(0.00deg, rgb(255, 255, 255),rgba(255, 255, 255, 0) 100%)',
+
+          },
+
+
         }
       }
     }
   </script>
 </head>
 
-<body>
+<body class="font-Manrope">
+  <section>
+    <!-- nav bar section start here -->
+    <nav class="w-11/12 mx-auto">
+      <div class="navbar p-0 py-2">
+        <div class="navbar-start flex gap-2 items-center   ">
 
+          <i class="  fa-solid fa-arrow-up text-black bg-bgPrimary border rounded-full p-1 flex justify-center items-center text-xl w-8 h-8"
+            style="transform: rotate(45deg);"></i>
+
+          <h2 class=" font-extrabold text-3xl ">Rinterio</h2>
+        </div>
+        <!-- navbar middle menu section modification -->
+
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal text-lg font-extrabold">
+            <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Home</a></li>
+            <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Services</a></li>
+            <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Portfolio</a></li>
+            <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Blogs</a></li>
+            <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <!--cart,user logo added with fontawsome -->
+          <div class="flex items-center gap-5 text-lg">
+            <button class="flex items-center gap-4 text-secondary">
+              <i class="fa-solid fa-magnifying-glass p-2 border rounded-full"></i>
+              <i class="fa-solid fa-cart-shopping p-2 border rounded-full"></i>
+            </button>
+            <button
+              class="bg-bgPrimary border flex justify-center items-center gap-2 rounded-full w-52 h-14 font-extrabold">Book
+              Consult<i class="fa-solid fa-arrow-up text-arrow bg-black border rounded-full  p-1  text-xl w-8 h-8"
+                style="transform: rotate(45deg);"></i></button>
+          </div>
+
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-lg font-medium right-0 gap-5">
+              <!-- copy the menu item for mobile view sandwitch -->
+              <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Home</a></li>
+              <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Services</a></li>
+              <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Portfolio</a></li>
+              <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Blogs</a></li>
+              <li class="hover:text-secondary transition-colors duration-300 ease-in-out"><a>Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <!-- nav bar section end here -->
 </body>
+
 
 </html>
