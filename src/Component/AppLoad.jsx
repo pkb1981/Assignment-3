@@ -1,0 +1,70 @@
+import { FaStar } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa6";
+
+const AppLoad = ({ allApps }) => {
+
+
+    return (
+        <div className="mb-6">
+            <div className="text-center">
+                <h2 className="text-2xl  font-semibold">Trending Apps</h2>
+                <p className="text-[#627382]">Explore All Trending Apps on the Market developed by us</p>
+
+            </div>
+
+            {/* card area */}
+            <div>
+                <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 my-5">
+
+                    {
+                        allApps
+                            .filter(app => app.ratingAvg >= 4.5).slice(0, 8).sort((a, b) => b.ratingAvg - a.ratingAvg)
+                            .map((app) => (
+                                <div key={app.id} className="card bg-base-100 shadow-sm">
+                                    <figure className="p-4">
+                                        <img className="rounded-2xl size-full object-cover object-top hover:scale-105 transition-all hover:-rotate-2 duration-500" src={app.image} alt="" />
+                                    </figure>
+                                    <div className="card-body">
+                                        <div>
+                                            <p className="font-semibold whitespace-nowrap">{app.title}:
+                                            </p>
+                                            <p className="text-xs font-extralight">{app.description}</p>
+                                        </div>
+
+
+                                        <div className="flex gap-8 ">
+                                            <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
+                                                <FaDownload />
+                                                <span>
+                                                    {new Intl.NumberFormat("en-US", {
+                                                        notation: "compact",
+                                                    }).format(app.downloads)}
+                                                </span>
+                                            </button>
+
+                                            <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
+                                                <FaStar />
+                                                <span>{app.ratingAvg}</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))
+                    }
+
+                </div>
+
+                {/* button all */}
+                <div className="text-center ">
+                    <button className=" btn text-xs w-25 h-8 text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]">
+                        Show All
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    );
+};
+
+export default AppLoad;

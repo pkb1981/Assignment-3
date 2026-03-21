@@ -1,6 +1,10 @@
 import { FaAppStoreIos, FaGooglePlay } from "react-icons/fa";
 import heroImg from '../assets/hero.png';
+
+
 const Hero = () => {
+
+
     return (
 
         // upper section of hero
@@ -14,14 +18,23 @@ const Hero = () => {
                         At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.
                     </p>
 
+                    {/* linking to playstore & appstore */}
                     <div className="mb-6">
                         <button className="btn mr-3">
-                            <FaGooglePlay size={24} className="text-[#00BFFC]" />
-                            Google Play
+                            <a href="https://play.google.com/store/apps?hl=en" target="_blank">
+                                <div className="flex items-center gap-2">
+                                    <FaGooglePlay size={24} className="text-[#00BFFC]" />
+                                    Google Play
+                                </div>
+                            </a>
                         </button>
                         <button className="btn">
-                            <FaAppStoreIos size={24} className="text-[#0073F6]" />
-                            App Store
+                            <a href="https://apps.apple.com/us/iphone/apps" target="_blank">
+                                <div className="flex items-center gap-2">
+                                    <FaAppStoreIos size={24} className="text-[#0073F6]" />
+                                    App Store
+                                </div>
+                            </a>
                         </button>
                     </div>
 
