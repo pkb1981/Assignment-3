@@ -3,6 +3,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import AllApps from './Component/AllApps.jsx'
+import AppDetails from './Component/AppDetails.jsx'
 import InstalledApps from './Component/InstalledApps.jsx'
 import Layout from './Component/Layout.jsx'
 import Home from './Home.jsx'
@@ -22,13 +23,22 @@ const router = createBrowserRouter([
         }
       },
       {
-        path: 'apps',
+        path: '/apps',
         element: <AllApps></AllApps>,
         loader: async () => {
           const res = await axios.get("/data.json");
           return res.data;
         }
       },
+      {
+        path: "/app/:id",
+        element: <AppDetails />,
+        loader: async () => {
+          const res = await axios.get("/data.json");
+          return res.data;
+        }
+      },
+
       {
         path: 'installation',
         element: <InstalledApps />

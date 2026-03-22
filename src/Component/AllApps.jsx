@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import iconDownloads from '../assets/icon-downloads.png';
 import iconRatings from '../assets/icon-ratings.png';
 
@@ -6,8 +6,6 @@ import iconRatings from '../assets/icon-ratings.png';
 const AllApps = () => {
 
     const allApps = useLoaderData();
-
-
 
     return (
 
@@ -44,35 +42,37 @@ const AllApps = () => {
 
                 {
                     allApps.map((app) => (
-                        <div key={app.id} className="card bg-base-100 shadow-sm">
-                            <figure className="p-4">
-                                <img className="rounded-2xl size-full object-cover object-top hover:scale-105 transition-all hover:-rotate-2 duration-500" src={app.image} alt="" />
-                            </figure>
-                            <div className="card-body">
-                                <div>
-                                    <p className="font-semibold whitespace-nowrap">{app.title}:
-                                    </p>
-                                    <p className="text-xs font-extralight">{app.description}</p>
-                                </div>
+                        <Link to={`/app/${app.id}`} key={app.id}>
+                            <div className="card bg-base-100 shadow-sm">
+                                <figure className="p-4">
+                                    <img className="rounded-2xl size-full object-cover object-top hover:scale-105 transition-all hover:-rotate-2 duration-500" src={app.image} alt="" />
+                                </figure>
+                                <div className="card-body">
+                                    <div>
+                                        <p className="font-semibold whitespace-nowrap">{app.title}:
+                                        </p>
+                                        <p className="text-xs font-extralight">{app.description}</p>
+                                    </div>
 
 
-                                <div className="flex gap-8 ">
-                                    <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
-                                        <img src={iconDownloads} alt="" className="h-4 w-4" />
-                                        <span>
-                                            {new Intl.NumberFormat("en-US", {
-                                                notation: "compact",
-                                            }).format(app.downloads)}
-                                        </span>
-                                    </button>
+                                    <div className="flex gap-8 ">
+                                        <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
+                                            <img src={iconDownloads} alt="" className="h-4 w-4" />
+                                            <span>
+                                                {new Intl.NumberFormat("en-US", {
+                                                    notation: "compact",
+                                                }).format(app.downloads)}
+                                            </span>
+                                        </button>
 
-                                    <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
-                                        <img src={iconRatings} alt="" className="h-4 w-4" />
-                                        <span>{app.ratingAvg}</span>
-                                    </button>
+                                        <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
+                                            <img src={iconRatings} alt="" className="h-4 w-4" />
+                                            <span>{app.ratingAvg}</span>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </Link>
                     ))
                 }
 

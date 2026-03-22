@@ -14,3 +14,9 @@
 body{
   font-family: var(--font-news);
 }
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#632EE3] to-[#9F62F2];
+  }
+}
