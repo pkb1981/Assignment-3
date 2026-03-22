@@ -1,7 +1,8 @@
-import { FaStar } from "react-icons/fa";
-import { FaDownload } from "react-icons/fa6";
+import { Link } from "react-router";
+import iconDownloads from '../assets/icon-downloads.png';
+import iconRatings from '../assets/icon-ratings.png';
 
-const AppLoad = ({ allApps }) => {
+const AppLoad = ({ selectiveApps }) => {
 
 
     return (
@@ -17,7 +18,7 @@ const AppLoad = ({ allApps }) => {
                 <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 my-5">
 
                     {
-                        allApps
+                        selectiveApps
                             .filter(app => app.ratingAvg >= 4.5).slice(0, 8).sort((a, b) => b.ratingAvg - a.ratingAvg)
                             .map((app) => (
                                 <div key={app.id} className="card bg-base-100 shadow-sm">
@@ -34,7 +35,7 @@ const AppLoad = ({ allApps }) => {
 
                                         <div className="flex gap-8 ">
                                             <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
-                                                <FaDownload />
+                                                <img src={iconDownloads} alt="" className="h-4 w-4" />
                                                 <span>
                                                     {new Intl.NumberFormat("en-US", {
                                                         notation: "compact",
@@ -43,7 +44,7 @@ const AppLoad = ({ allApps }) => {
                                             </button>
 
                                             <button className="btn flex-1 flex items-center justify-center gap-2 btn-sm">
-                                                <FaStar />
+                                                <img src={iconRatings} alt="" className="h-4 w-4" />
                                                 <span>{app.ratingAvg}</span>
                                             </button>
                                         </div>
@@ -55,10 +56,10 @@ const AppLoad = ({ allApps }) => {
                 </div>
 
                 {/* button all */}
-                <div className="text-center ">
+                <div className="text-center "><Link to='/apps'>
                     <button className=" btn text-xs w-25 h-8 text-white bg-gradient-to-r from-[#632EE3] to-[#9F62F2]">
                         Show All
-                    </button>
+                    </button></Link>
                 </div>
 
             </div>

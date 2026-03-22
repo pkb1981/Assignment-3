@@ -5,7 +5,7 @@ import Hero from "./Component/Hero";
 
 function Home() {
 
-  const allApps = useLoaderData();
+  const selectiveApps = useLoaderData();
 
   return (
     <>
@@ -13,7 +13,7 @@ function Home() {
         <Hero></Hero>
       </div>
       <div className="m-6 ">
-        <AppLoad allApps={allApps}></AppLoad>
+        <AppLoad selectiveApps={selectiveApps}></AppLoad>
       </div>
 
     </>

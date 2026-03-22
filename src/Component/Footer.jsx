@@ -13,8 +13,25 @@ const Footer = () => {
                     HERO.IO
                 </h1>
 
-                <div className="justify-self-end text-right">
-                    <h6 className="footer-title">Social Links</h6>
+                <div className="footer sm:footer-horizontal text-white">
+                    <nav className="ml-45">
+                        <h6 className="footer-title">Services</h6>
+                        <a className="link link-hover">Branding</a>
+                        <a className="link link-hover">Design</a>
+                        <a className="link link-hover">Marketing</a>
+                        <a className="link link-hover">Advertisement</a>
+                    </nav>
+                    <nav>
+                        <h6 className="footer-title">Company</h6>
+                        <a className="link link-hover">About us</a>
+                        <a className="link link-hover">Contact</a>
+                        <a className="link link-hover">Jobs</a>
+                        <a className="link link-hover">Press kit</a>
+                    </nav>
+                </div>
+
+                <div className=" text-center">
+                    <h6 className="">Social Links</h6>
                     <div className="grid grid-flow-col gap-4">
                         <a>
                             <svg
