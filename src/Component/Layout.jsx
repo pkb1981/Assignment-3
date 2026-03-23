@@ -4,10 +4,17 @@ import Navbar from "./Navbar";
 
 const Layout = () => {
     return (
-        <div className="w-11/12 mx-auto">
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+        <div className="min-h-screen flex flex-col">
+            {/* Navbar always full width */}
+            <Navbar />
+
+            {/* Main content */}
+            <main className="flex-1 w-full px-4 sm:px-6 lg:px-8 max-w-[1440px] mx-auto">
+                <Outlet />
+            </main>
+
+            {/* Footer always full width */}
+            <Footer />
         </div>
     );
 };

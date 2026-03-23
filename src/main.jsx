@@ -12,8 +12,7 @@ import './index.css'
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <Layout></Layout>,
+    path: '/', element: <Layout></Layout>,
     children: [
       {
         index: true,
@@ -23,14 +22,16 @@ const router = createBrowserRouter([
           return res.data;
         }
       },
+
       {
         path: '/apps',
-        element: <AllApps></AllApps>,
+        element: <AllApps />,
         loader: async () => {
           const res = await axios.get("/data.json");
           return res.data;
         }
       },
+
       {
         path: "/app/:id",
         element: <AppDetails />,
@@ -41,13 +42,17 @@ const router = createBrowserRouter([
       },
 
       {
-        path: '/noApp',
+        path: "*",
         element: <AppNotFoundPage />,
       },
 
       {
-        path: 'installation',
-        element: <InstalledApps />
+        path: '/installation',
+        element: <InstalledApps />,
+        loader: async () => {
+          const res = await axios.get("/data.json");
+          return res.data;
+        }
       },
 
     ]
